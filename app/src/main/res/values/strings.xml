@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Github User Dicoding BFAA</string>
+    <string name="searchbar_hint">Cari Pengguna</string>
+    <string name="username">Username</string>
+    <string name="fullname">Nama Pengguna</string>
+    <string name="followers">Followers</string>
+    <string name="following">Following</string>
+    <string name="content_tab_text">Followers</string>
+    <string name="content_tab_text2">Following</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="tab_title">
+        <item>@string/followers</item>
+        <item>@string/following</item>
+    </string-array>
+</resources>
