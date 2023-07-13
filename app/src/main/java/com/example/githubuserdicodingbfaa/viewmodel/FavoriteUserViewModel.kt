@@ -3,7 +3,6 @@ package com.example.githubuserdicodingbfaa.viewmodel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.githubuserdicodingbfaa.data.FavoriteUserRoomDatabase
 import com.example.githubuserdicodingbfaa.model.database.FavoriteUser

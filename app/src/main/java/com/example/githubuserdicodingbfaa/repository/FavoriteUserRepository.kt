@@ -1,14 +1,10 @@
 package com.example.githubuserdicodingbfaa.repository
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import com.example.githubuserdicodingbfaa.data.FavoriteUserDao
-import com.example.githubuserdicodingbfaa.data.FavoriteUserRoomDatabase
 import com.example.githubuserdicodingbfaa.model.database.FavoriteUser
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
 
 class FavoriteUserRepository(private val favoriteUserDao: FavoriteUserDao) {
 
