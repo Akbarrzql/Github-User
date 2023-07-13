@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubuserdicodingbfaa.databinding.CardListUsersBinding
-import com.example.githubuserdicodingbfaa.model.ResponseFollowersItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowersItem
 
 
 class FollowerAdapter(private val listFollower: List<ResponseFollowersItem>) : RecyclerView.Adapter<FollowerAdapter.ViewHolder>(){

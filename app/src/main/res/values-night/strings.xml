@@ -4,5 +4,12 @@
     <string name="fullname">Nama Pengguna</string>
     <string name="followers">Followers</string>
     <string name="following">Following</string>
+    <string name="menu_1">Pengaturan</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="text_label_1">Beranda</string>
+    <string name="text_label_2">Favorit</string>
+    <string name="favorite">Favorite</string>
+    <string name="fab_content_desc">tambah favorite\n</string>
+    <string name="share">Bagikan Profil</string>
 
 </resources>

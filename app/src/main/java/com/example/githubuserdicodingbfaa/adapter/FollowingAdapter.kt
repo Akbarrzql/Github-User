@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubuserdicodingbfaa.databinding.CardListUsersBinding
-import com.example.githubuserdicodingbfaa.model.ResponseFollowingItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowingItem
 
 class FollowingAdapter(private val listFollowing: List<ResponseFollowingItem>) : RecyclerView.Adapter<FollowingAdapter.ViewHolder>(){
     private lateinit var onItemClickCallback: FollowingAdapter.OnItemClickCallback

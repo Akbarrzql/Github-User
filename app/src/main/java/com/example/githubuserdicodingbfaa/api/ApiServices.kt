@@ -1,10 +1,10 @@
 package com.example.githubuserdicodingbfaa.api
 
-import com.example.githubuserdicodingbfaa.model.ResponseDetailUsers
-import com.example.githubuserdicodingbfaa.model.ResponseFollowersItem
-import com.example.githubuserdicodingbfaa.model.ResponseFollowingItem
-import com.example.githubuserdicodingbfaa.model.ResponseSearch
-import com.example.githubuserdicodingbfaa.model.ResponseUsersItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseDetailUsers
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowersItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowingItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseSearch
+import com.example.githubuserdicodingbfaa.model.response.ResponseUsersItem
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

@@ -8,16 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.githubuserdicodingbfaa.R
-import com.example.githubuserdicodingbfaa.adapter.FollowerAdapter
 import com.example.githubuserdicodingbfaa.adapter.FollowingAdapter
-import com.example.githubuserdicodingbfaa.databinding.FragmentFollowersBinding
 import com.example.githubuserdicodingbfaa.databinding.FragmentFollowingBinding
-import com.example.githubuserdicodingbfaa.model.ResponseFollowersItem
-import com.example.githubuserdicodingbfaa.model.ResponseFollowingItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowingItem
 import com.example.githubuserdicodingbfaa.utils.Helper
-import com.example.githubuserdicodingbfaa.view.DetailActivity
-import com.example.githubuserdicodingbfaa.viewmodel.FollowersViewModel
+import com.example.githubuserdicodingbfaa.view.home.DetailActivity
 import com.example.githubuserdicodingbfaa.viewmodel.FollowingViewModel
 
 class FollowingFragment : Fragment() {

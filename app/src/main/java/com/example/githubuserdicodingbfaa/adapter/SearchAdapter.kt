@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.githubuserdicodingbfaa.databinding.CardListUsersBinding
-import com.example.githubuserdicodingbfaa.model.ItemsItem
+import com.example.githubuserdicodingbfaa.model.response.ItemsItem
 
 class SearchAdapter(private val searchResult: List<ItemsItem>) : RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
     private lateinit var onItemClickCallback: SearchAdapter.OnItemClickCallback

@@ -1,4 +1,4 @@
-package com.example.githubuserdicodingbfaa.model
+package com.example.githubuserdicodingbfaa.model.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

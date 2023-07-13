@@ -1,7 +1,9 @@
 package com.example.githubuserdicodingbfaa.utils
 
+import android.content.Context
 import android.view.View
-import com.facebook.shimmer.ShimmerFrameLayout
+import android.widget.Toast
+import com.example.githubuserdicodingbfaa.R
 
 class Helper {
     fun showLoading(isLoading: Boolean, view: View) {
@@ -11,4 +13,5 @@ class Helper {
             view.visibility = View.INVISIBLE
         }
     }
+
 }

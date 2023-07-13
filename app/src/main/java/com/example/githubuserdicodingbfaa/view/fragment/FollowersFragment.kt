@@ -10,9 +10,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubuserdicodingbfaa.adapter.FollowerAdapter
 import com.example.githubuserdicodingbfaa.databinding.FragmentFollowersBinding
-import com.example.githubuserdicodingbfaa.model.ResponseFollowersItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowersItem
 import com.example.githubuserdicodingbfaa.utils.Helper
-import com.example.githubuserdicodingbfaa.view.DetailActivity
+import com.example.githubuserdicodingbfaa.view.home.DetailActivity
 import com.example.githubuserdicodingbfaa.viewmodel.FollowersViewModel
 
 class FollowersFragment : Fragment() {

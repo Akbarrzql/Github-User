@@ -9,6 +9,14 @@
     <string name="content_tab_text2">Following</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="menu_1">Pengaturan</string>
+    <string name="dark_mode">Mode Gelap</string>
+    <string name="text_label_1">Beranda</string>
+    <string name="text_label_2">Favorit</string>
+    <string name="favorite">Favorite</string>
+    <string name="fab_content_desc">tambah favorite\n</string>
+    <string name="share">Bagikan Profil</string>
+    <string name="name_detail">Detail User</string>
 
     <string-array name="tab_title">
         <item>@string/followers</item>

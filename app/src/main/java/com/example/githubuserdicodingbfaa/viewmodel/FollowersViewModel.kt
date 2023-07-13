@@ -4,7 +4,7 @@ import android.content.ContentValues.TAG
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserdicodingbfaa.model.ResponseFollowersItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseFollowersItem
 import com.example.githubuserdicodingbfaa.utils.Contans.Companion.tokenGithub
 import retrofit2.Call
 import retrofit2.Callback

@@ -1,18 +1,18 @@
-package com.example.githubuserdicodingbfaa.model
+package com.example.githubuserdicodingbfaa.model.response
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class ResponseFollowers(
+data class ResponseUsers(
 
-	@field:SerializedName("ResponseFollowers")
-	val responseFollowers: List<ResponseFollowersItem?>? = null
+	@field:SerializedName("ResponseUsers")
+	val responseUsers: List<ResponseUsersItem?>? = null
 ) : Parcelable
 
 @Parcelize
-data class ResponseFollowersItem(
+data class ResponseUsersItem(
 
 	@field:SerializedName("gists_url")
 	val gistsUrl: String? = null,

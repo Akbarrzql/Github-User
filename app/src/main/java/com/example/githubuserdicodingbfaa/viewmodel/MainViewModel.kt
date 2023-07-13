@@ -2,15 +2,18 @@ package com.example.githubuserdicodingbfaa.viewmodel
 
 import android.content.ContentValues.TAG
 import android.util.Log
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.githubuserdicodingbfaa.model.ResponseUsersItem
+import androidx.lifecycle.asLiveData
+import com.example.githubuserdicodingbfaa.model.response.ResponseUsersItem
 import com.example.githubuserdicodingbfaa.utils.Contans.Companion.tokenGithub
+import com.example.githubuserdicodingbfaa.view.settings.SettingPreferences
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainViewModel: ViewModel() {
+class MainViewModel(private val pref: SettingPreferences): ViewModel() {
 
     val listUsers: MutableLiveData<List<ResponseUsersItem>> = MutableLiveData()
     val isLoading: MutableLiveData<Boolean> = MutableLiveData()
@@ -38,4 +41,10 @@ class MainViewModel: ViewModel() {
 
         })
     }
+
+    fun getThemeSettings(): LiveData<Boolean> {
+        return pref.getThemeSetting().asLiveData()
+    }
+
+
 }

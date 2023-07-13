@@ -1,28 +1,38 @@
-package com.example.githubuserdicodingbfaa.view
+package com.example.githubuserdicodingbfaa.view.home
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.Menu
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.githubuserdicodingbfaa.R
 import com.example.githubuserdicodingbfaa.adapter.SearchAdapter
 import com.example.githubuserdicodingbfaa.adapter.UsersAdapter
 import com.example.githubuserdicodingbfaa.databinding.ActivityMainBinding
-import com.example.githubuserdicodingbfaa.model.ItemsItem
-import com.example.githubuserdicodingbfaa.model.ResponseUsersItem
+import com.example.githubuserdicodingbfaa.model.response.ItemsItem
+import com.example.githubuserdicodingbfaa.model.response.ResponseUsersItem
 import com.example.githubuserdicodingbfaa.utils.Helper
+import com.example.githubuserdicodingbfaa.view.favorite.FavoriteActivity
+import com.example.githubuserdicodingbfaa.view.settings.SettingPreferences
+import com.example.githubuserdicodingbfaa.view.settings.SettingsActivity
+import com.example.githubuserdicodingbfaa.view.settings.dataStore
 import com.example.githubuserdicodingbfaa.viewmodel.MainViewModel
 import com.example.githubuserdicodingbfaa.viewmodel.SearchViewModel
+import com.example.githubuserdicodingbfaa.viewmodel.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
 
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding!!
-    private val mainViewModel by viewModels<MainViewModel>()
+    private lateinit var mainViewModel: MainViewModel
     private val searchViewModel by viewModels<SearchViewModel>()
     private val helper = Helper()
 
@@ -32,6 +42,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportActionBar?.hide()
+
+        val pref = SettingPreferences.getInstance(application.dataStore)
+        val viewModelFactory = ViewModelFactory(pref)
+        mainViewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+        settingPreferencesMain()
 
 
         mainViewModel.users()
@@ -52,6 +67,36 @@ class MainActivity : AppCompatActivity() {
         }
 
         with(binding) {
+            val menu = searchBar.menu
+            val menuInflater = menuInflater
+            menuInflater.inflate(R.menu.option_menu, menu)
+            val isDarkModeActive = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+            val menuItem = menu.findItem(R.id.menu1)
+            val menuItem2 = menu.findItem(R.id.menu2)
+            if (isDarkModeActive) {
+                menuItem.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_settings_white_24)
+                menuItem2.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_favorite_white_24)
+            } else {
+                menuItem.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_settings_24)
+                menuItem2.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_favorite_24)
+            }
+            searchBar.setOnMenuItemClickListener {
+                when (it.itemId) {
+                    R.id.menu1 -> {
+                        Intent(this@MainActivity, SettingsActivity::class.java).also { it ->
+                            startActivity(it)
+                        }
+                        true
+                    }
+                    R.id.menu2 -> {
+                        Intent(this@MainActivity, FavoriteActivity::class.java).also {
+                            startActivity(it)
+                        }
+                        true
+                    }
+                    else -> false
+                }
+            }
             searchView.setupWithSearchBar(searchBar)
             searchView.editText.addTextChangedListener(object : TextWatcher {
                 override fun afterTextChanged(s: Editable?) {
@@ -71,7 +116,16 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+    }
 
+    private fun settingPreferencesMain(){
+        mainViewModel.getThemeSettings().observe(this) { isLightModeActive: Boolean ->
+            if (isLightModeActive) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun setDataUserRv(listUsers: List<ResponseUsersItem>) {
@@ -112,6 +166,19 @@ class MainActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.option_menu, menu)
+
+        val isDarkModeActive = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        val menuItem = menu.findItem(R.id.menu1)
+        if (isDarkModeActive) {
+            menuItem.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_settings_white_24)
+        } else {
+            menuItem.icon = ContextCompat.getDrawable(this@MainActivity, R.drawable.baseline_settings_24)
+        }
+        return true
     }
 
     override fun onDestroy() {
